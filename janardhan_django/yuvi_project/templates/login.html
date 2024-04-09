@@ -1,0 +1,33 @@
+{% extends 'layout.html'%}
+{% load static %}
+{% block 'main' %}
+<div class="col-md-9 box">
+  <!--main content-->
+  <div class="col-md-4 mt-5 mx-auto shadow p-3 mb-5 bg-body rounded">
+  <h2> Login </h2>
+    <form action="/login" method="POST">
+      {% csrf_token %}
+      {% if errorMsg %}
+          <div class="alert alert-danger" role="alert">
+            {{ errorMsg }}
+          </div>
+      {% endif %}
+      
+      <div class="mb-3">
+        <label class="form label"><strong>username:</strong></label>
+        <input type="text" name="username" class="form-control" placeholder="please Enter your username">
+      </div>
+      <div class="mb-3">
+        <label for="input2" class="form label"><strong>Password:</strong></label>
+        <input type="password" name="userpassword" class="form-control" id="input2" placeholder="enter your password(atleast 8 characters)">
+      </div>
+    
+      <button type="submit" class="btn btn-danger">log in</button>
+      &ndsp;&ndsp;&ndsp; Already a user? <a class="anchor" href="/login.html" >Login</a>
+    </form>
+    </div>
+</div>    
+
+{% endblock 'main' %}
+</body>
+</html>

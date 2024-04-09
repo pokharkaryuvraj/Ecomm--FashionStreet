@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block 'main' %}
+
+  <div class="row">
+    <div class="col-md-6">
+
+        <img src="{{ wear.pimage.url }}"  class="card-img-top"
+        alt="No image" height="450px" >
+    </div>
+        <div class="col-md-6">
+            <h5 >Name:{{ wear.name }}</h5>
+            <p><strong>category: {{ wear.category }}</strong></p>
+            <p><strong>Price: {{ wear.price }}</strong></p>
+            <a href="/index" class="btn btn-primary">back</a>
+            <a href="/addtocart/{{wear.id}}" class="btn btn-primary">Add to cart</a> &nbsp; &nbsp;
+
+            <a href="/viewcart" class="btn btn-danger">View cart</a>&nbsp; &nbsp;
+            <a href="/index" class="btn btn-danger">Shop More</a>
+        </div>   
+  </div>
+        
+    
+     
+    
+
+{% endblock 'main' %}

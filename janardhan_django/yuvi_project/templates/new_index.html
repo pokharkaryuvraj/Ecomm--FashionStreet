@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block 'main' %}
+
+  <div class="row">
+      {%  for we in wear %}
+      <div class="col-md-3" style="background-color:#fad0c4; color:#ffffff";>
+        <div class="card" style="width: 100%;">
+          <img src="{{ we.pimage.url }}"  class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-tittle">{{ we.name }}</h5>
+            <p class="card-text">Something New</p>
+            <p><strong> {{ we.category }}</strong></p>
+            <p><strong> {{ we.price }}</strong></p>
+            <a href="/details/{{we.id}}" class="btn btn-"style="background-color: #FC47BB">View Details</a>
+            
+  </div>
+        </div>
+      </div>
+      {% endfor %}
+      <!-- <div class="col-md-3">
+        <div class="card" style="width: 100%;">
+          <img src="{% static 'images/flower.jpg'%}" height="100" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Product 2</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+     </div> -->
+      <!-- <div class="col-md-3">
+        <div class="card" style="width: 100%;">
+          <img src="{% static 'images/flower.jpg' %}" height="100" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Product 4</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+{% endblock 'main' %}

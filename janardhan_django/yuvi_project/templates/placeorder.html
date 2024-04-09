@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block 'main' %}
+<div class="row">
+    
+    <div class="col-md-8">
+        <h3 class="bg-danger text-while">Order Details</h3>
+        {%  for cart in mycart %}
+        <div class="row"> <!-- row 2 -->
+        <div class="col-md-6"> <!-- row 2 col 1-->
+            <img src="{{ cart.sid.pimage.url }}" width="100%" height="150px">
+        </div> <!-- row 2 col 1 end -->
+        <div class="col-md-6 my-1"> <!-- row 2 col 2-->
+            <h5> {{ cart.sid.name }}</h5>
+            <p><strong>Price: Rs. {{ cart.sid.price }}</strong></p>
+            Quantity: {{ cart.quantity }}
+        </div>  <!--ro2 col 2 end-->    
+    </div> <!--row 2 end -->
+        {% endfor %}
+    </div>
+        <div class="col-md-4 mt-2">
+            <h4 class"bg-danger text-white">Bill Details</h4> {{ count }} 
+            <strong style="color: red;">Total Products: </strong> <br>
+            <strong>Payable Amount: </strong>Rs.{{ billamount }} <br><br>
+                <a href="/makepayment" class="btn btn-danger">Make Payment</a>
+        </div>
+</div>
+</div>
+
+{% endblock 'main' %}

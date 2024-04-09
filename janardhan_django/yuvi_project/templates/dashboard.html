@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>WEAR DETAILS</h2>
+    <a href="/studinfo">Add New Wear</a>
+    <table border='2' align='center'>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>CATEGORY</th>
+            <th>PRICE</th>
+            <th>ACTIONS</th>
+            
+        </tr>
+        {% for we in wedata %}
+        <tr>
+            <td> {{ we.id }} </td>
+            <td> {{ we.name }} </td>
+            <td> {{ we.category }} </td>
+            <td> {{ we.price }} </td>
+            <td>
+                <a href="/delwe/{{ we.id }}">Delete</a>
+                <a href="/updatewe/{{ we.id }}">Update</a>
+            </td>
+            </td>
+        </tr>    
+        {% endfor %}
+    </table>
+
+</body>
+</html>
